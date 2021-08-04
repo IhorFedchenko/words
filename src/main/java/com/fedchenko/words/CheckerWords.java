@@ -31,10 +31,13 @@ public class CheckerWords {
     private int hitCounter() {
         int result = 1;
         for (int i = 0; i < words.size() - 1; i++) {
-            if (getLastChar(words.get(i)).equals(getFirstChar(words.get(i + 1)))){
-                result++;
-            }else break;
-
+            try {
+                if (getLastChar(words.get(i)).equals(getFirstChar(words.get(i + 1)))) {
+                    result++;
+                } else break;
+            } catch (IndexOutOfBoundsException e) {
+                return result;
+            }
         }
         return result;
     }
