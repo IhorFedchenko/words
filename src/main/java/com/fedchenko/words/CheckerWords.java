@@ -1,5 +1,6 @@
 package com.fedchenko.words;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CheckerWords {
@@ -7,7 +8,9 @@ public class CheckerWords {
     private List<String> words;
 
     public List<String> getWords() {
-        return words;
+        List<String> result = new ArrayList<String>(words.subList(0, hitCounter()));
+
+        return result;
     }
 
     public void setWords(List<String> words) {
@@ -26,7 +29,7 @@ public class CheckerWords {
     }
 
     private int hitCounter() {
-        int result = 0;
+        int result = 1;
         for (int i = 0; i < words.size() - 1; i++) {
             if (getLastChar(words.get(i)).equals(getFirstChar(words.get(i + 1)))){
                 result++;
