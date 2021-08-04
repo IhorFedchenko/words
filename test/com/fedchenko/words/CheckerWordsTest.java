@@ -7,7 +7,7 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-public class CheckeWordsTest {
+public class CheckerWordsTest {
 
     @Test
     public void testGetWords_exemple1() {
@@ -46,5 +46,18 @@ public class CheckeWordsTest {
         words.add("eagle");
         checkerWords.setWords(words);
         assertEquals("[fish, horse]", checkerWords.getWords().toString());
+    }
+
+    @Test
+    public void testGetWords_exemple4() {
+        CheckerWords checkerWords = new CheckerWords();
+        List<String> words = new ArrayList<String>();
+        words.add("");
+        words.add("horse");
+        words.add("");
+        words.add("goose");
+        words.add("eagle");
+        checkerWords.setWords(words);
+        assertEquals("[]", checkerWords.getWords().toString());
     }
 }
