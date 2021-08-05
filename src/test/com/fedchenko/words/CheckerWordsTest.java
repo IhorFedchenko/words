@@ -13,52 +13,44 @@ public class CheckerWordsTest {
     @Test
     public void testGetWords_exemple1() {
         CheckerWords checkerWords = new CheckerWords();
-        List<String> words = new ArrayList<String>();
-        words.add("fish");
-        words.add("horse");
-        words.add("egg");
-        words.add("goose");
-        words.add("eagle");
-        checkerWords.setWords(words);
+        checkerWords.setWord("fish");
+        checkerWords.setWord("horse");
+        checkerWords.setWord("egg");
+        checkerWords.setWord("goose");
+        checkerWords.setWord("eagle");
         assertEquals("[fish, horse, egg, goose, eagle]", checkerWords.getWords().toString());
     }
 
     @Test
     public void testGetWords_exemple2() {
         CheckerWords checkerWords = new CheckerWords();
-        List<String> words = new ArrayList<String>();
-        words.add("fish");
-        words.add("horse");
-        words.add("snake");
-        words.add("goose");
-        words.add("eagle");
-        checkerWords.setWords(words);
+        checkerWords.setWord("fish");
+        checkerWords.setWord("horse");
+        checkerWords.setWord("snake");
+        checkerWords.setWord("goose");
+        checkerWords.setWord("eagle");
         assertEquals("[fish, horse]", checkerWords.getWords().toString());
     }
 
     @Test
     public void testGetWords_exemple3() {
         CheckerWords checkerWords = new CheckerWords();
-        List<String> words = new ArrayList<String>();
-        words.add("fish");
-        words.add("horse");
-        words.add("");
-        words.add("goose");
-        words.add("eagle");
-        checkerWords.setWords(words);
+        checkerWords.setWord("fish");
+        checkerWords.setWord("horse");
+        checkerWords.setWord("");
+        checkerWords.setWord("goose");
+        checkerWords.setWord("eagle");
         assertEquals("[fish, horse]", checkerWords.getWords().toString());
     }
 
     @Test
     public void testGetWords_exemple4() {
         CheckerWords checkerWords = new CheckerWords();
-        List<String> words = new ArrayList<String>();
-        words.add("");
-        words.add("horse");
-        words.add("");
-        words.add("goose");
-        words.add("eagle");
-        checkerWords.setWords(words);
+        checkerWords.setWord("");
+        checkerWords.setWord("horse");
+        checkerWords.setWord("");
+        checkerWords.setWord("goose");
+        checkerWords.setWord("eagle");
         assertEquals("[]", checkerWords.getWords().toString());
     }
 }
