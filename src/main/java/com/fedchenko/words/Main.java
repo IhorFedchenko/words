@@ -1,13 +1,13 @@
 package com.fedchenko.words;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+@SpringBootApplication
 public class Main {
 
-
     public static void main(String[] args) {
-
+        SpringApplication.run(Main.class, args);
     }
 
 

@@ -1,4 +1,4 @@
-package com.fedchenko.words;
+package com.fedchenko.words.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class Controller {
     @RequestMapping("/hello")
     public String hello(){
-        return "Hello Spring";
+        return "hello spring boot";
     }
 }
