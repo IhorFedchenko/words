@@ -1,12 +1,16 @@
 package com.fedchenko.words.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.fedchenko.words.CheckerWords;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
+@ResponseBody
 public class Controller {
-    @RequestMapping("/hello")
-    public String hello(){
-        return "hello spring boot";
+    @PostMapping("/words")
+    public String postBody(@RequestBody String input) {
+
+        return "hello " + input;
     }
 }
