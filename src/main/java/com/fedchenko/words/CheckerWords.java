@@ -1,10 +1,12 @@
 package com.fedchenko.words;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class CheckerWords {
-
+    @JsonProperty("words")
     private List<String> words;
 
     public List<String> getWords() {
