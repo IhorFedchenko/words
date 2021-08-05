@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 public class Controller {
     @PostMapping("/words")
     public String postBody(@RequestBody String request) {
-//        TODO parse JSON and set with iterator to java object
+//        TODO parse JSON and set to java object
 //        TODO return Java object like as JSON
 
         return "";
