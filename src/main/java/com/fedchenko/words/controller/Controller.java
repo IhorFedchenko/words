@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@ResponseBody
 public class Controller {
     @PostMapping("/words")
     public String postBody(@RequestBody String input) {
