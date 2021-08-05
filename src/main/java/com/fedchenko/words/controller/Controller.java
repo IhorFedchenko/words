@@ -1,19 +1,18 @@
 package com.fedchenko.words.controller;
 
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fedchenko.words.CheckerWords;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 public class Controller {
     @PostMapping("/words")
-    public String postBody(@RequestBody String input) throws JsonProcessingException {
-        ObjectMapper mapper = new ObjectMapper();
-        CheckerWords words = mapper.readValue(input, CheckerWords.class);
+    public String postBody(@RequestBody String request) {
+//        TODO parse JSON and set with iterator to java object
+//        TODO return Java object like as JSON
 
-        return "hello " + input;
+        return "";
     }
+
 }

@@ -6,17 +6,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CheckerWords {
-    @JsonProperty("words")
-    private List<String> words;
+    private List<String> words = new ArrayList<>();
 
     public List<String> getWords() {
-        List<String> result = new ArrayList<String>(words.subList(0, hitCounter()));
+        List<String> result = new ArrayList<>(words.subList(0, hitCounter()));
 
         return result;
     }
 
-    public void setWords(List<String> words) {
-        this.words = words;
+    public void setWord(String input) {
+        words.add(input);
     }
 
     private String getFirstChar(String input) {
