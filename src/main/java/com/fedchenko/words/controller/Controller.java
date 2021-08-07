@@ -20,6 +20,7 @@ public class Controller {
         String sufix = "}";
 //        TODO make slim controller, all below like as class with arg
 //        TODO сделать небольшой парсер json, если начинается на { и заканчивается }
+//        test newBranch
 // взять слово до скобок и удалить кавычки, метод взять имя массива
         CheckerWords words = new CheckerWords();
         JSONParser jsonParser = new JSONParser();
