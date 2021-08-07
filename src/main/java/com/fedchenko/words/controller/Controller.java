@@ -16,18 +16,21 @@ import java.util.Iterator;
 public class Controller {
     @PostMapping("/words")
     public String postBody(@RequestBody String request) {
-//        TODO return Java object like as JSON
+//        TODO make slim controller, all below like as class with arg
+//        TODO сделать небольшой парсер json, если начинается на { и заканчивается }
+// взять слово до скобок и удалить кавычки, метод взять имя массива
         CheckerWords words = new CheckerWords();
         JSONParser jsonParser = new JSONParser();
         JSONObject jsonObject = new JSONObject();
+//       String nameArray = jsonObject *how get nameArray
         try {
-             jsonObject =  (JSONObject) jsonParser.parse(request);
+            jsonObject = (JSONObject) jsonParser.parse(request);
         } catch (ParseException e) {
             e.printStackTrace();
         }
         JSONArray jsonArray = (JSONArray) jsonObject.get("words");
         Iterator<String> iterator = jsonArray.iterator();
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             words.setWord(iterator.next());
         }
         return words.getWords().toString();
