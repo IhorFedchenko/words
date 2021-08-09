@@ -22,7 +22,7 @@ public class WordsRestfulService {
         jsonObject = new JSONObject();
     }
 
-    public void getRequest(String request) {
+    public void parseRequest(String request) {
         try {
             jsonObject = (JSONObject) jsonParser.parse(request);
         } catch (ParseException e) {
