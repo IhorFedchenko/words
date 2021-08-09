@@ -14,7 +14,7 @@ public class WordsRestfulService {
     private JSONObject jsonObject;
     private JSONArray jsonArray;
 
-    String sufix = "}";
+    private String sufix = "}";
 
     public WordsRestfulService() {
         words = new CheckerWords();
@@ -31,24 +31,25 @@ public class WordsRestfulService {
         jsonArray = (JSONArray) jsonObject.get("words");
     }
 
-    public String getResponse(){
+    private String getArrayName() {
+        String arrayName = new String();
+        String stringJSONObject = jsonObject.toJSONString();
+        if (stringJSONObject.startsWith("{") && stringJSONObject.endsWith("}") && stringJSONObject.contains(":")) {
+            int indexOf = stringJSONObject.indexOf(":");
+            indexOf++;
+            arrayName = stringJSONObject.substring(0, indexOf);
+        }
+        return arrayName;
+    }
+
+    public String getResponse() {
         Iterator<String> iterator = jsonArray.iterator();
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             words.setWord(iterator.next());
         }
         jsonArray.clear();
         jsonArray.addAll(words.getWords());
         return getArrayName() + jsonArray.toString() + sufix;
     }
-private String getArrayName(){
-        String arrayName = new String();
-        String stringJSONObject = jsonObject.toJSONString();
-        if (stringJSONObject.startsWith("{") && stringJSONObject.endsWith("}") && stringJSONObject.contains(":")){
-            int indexOf = stringJSONObject.indexOf(":");
-            indexOf++;
-            arrayName = stringJSONObject.substring(0, indexOf);
-        }
-        return arrayName;
-}
 
 }
