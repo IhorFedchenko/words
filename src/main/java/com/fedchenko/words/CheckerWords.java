@@ -6,8 +6,8 @@ import java.util.List;
 public class CheckerWords {
     private List<String> words = new ArrayList<>();
 
-    public List<String> getWords() {
-        List<String> result = new ArrayList<>(words.subList(0, hitCounter()));
+    public ArrayList<String> getWords() {
+        ArrayList<String> result = new ArrayList<>(words.subList(0, hitCounter()));
         return result;
     }
 

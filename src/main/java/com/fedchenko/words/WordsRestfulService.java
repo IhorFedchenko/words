@@ -5,6 +5,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 
 public class WordsRestfulService {
@@ -13,8 +14,6 @@ public class WordsRestfulService {
     private JSONParser jsonParser;
     private JSONObject jsonObject;
     private JSONArray jsonArray;
-
-    private String sufix = "}";
 
     public WordsRestfulService() {
         words = new CheckerWords();
@@ -31,25 +30,10 @@ public class WordsRestfulService {
         jsonArray = (JSONArray) jsonObject.get("words");
     }
 
-    private String getArrayName() {
-        String arrayName = new String();
-        String stringJSONObject = jsonObject.toJSONString();
-        if (stringJSONObject.startsWith("{") && stringJSONObject.endsWith("}") && stringJSONObject.contains(":")) {
-            int indexOf = stringJSONObject.indexOf(":");
-            indexOf++;
-            arrayName = stringJSONObject.substring(0, indexOf);
-        }
-        return arrayName;
-    }
-
-    public String getResponse() {
-        Iterator<String> iterator = jsonArray.iterator();
-        while (iterator.hasNext()) {
-            words.setWord(iterator.next());
-        }
-        jsonArray.clear();
-        jsonArray.addAll(words.getWords());
-        return getArrayName() + jsonArray.toString() + sufix;
+    public WordsResponse getResponse() {
+        WordsResponse wordsResponse = new WordsResponse();
+        wordsResponse.setWords(words.getWords());
+        return wordsResponse;
     }
 
 }
