@@ -11,8 +11,8 @@ public class CheckerWords {
         return result;
     }
 
-    public void setWord(String input) {
-        words.add(input);
+    public void setWords(ArrayList<String> input) {
+        words.addAll(input);
     }
 
     private int hitCounter() {

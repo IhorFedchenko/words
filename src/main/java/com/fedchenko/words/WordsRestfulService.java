@@ -28,6 +28,7 @@ public class WordsRestfulService {
             e.printStackTrace();
         }
         jsonArray = (JSONArray) jsonObject.get("words");
+        words.setWords(jsonArray);
     }
 
     public WordsResponse getResponse() {
