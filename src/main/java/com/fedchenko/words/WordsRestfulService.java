@@ -4,10 +4,10 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Iterator;
 
+@Service
 public class WordsRestfulService {
 
     private CheckerWords words;
