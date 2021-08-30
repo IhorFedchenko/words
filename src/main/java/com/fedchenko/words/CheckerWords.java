@@ -11,7 +11,7 @@ public class CheckerWords {
         return result;
     }
 
-    public void setWords(ArrayList<String> input) {
+    public void setWords(List<String> input) {
         words.addAll(input);
     }
 
