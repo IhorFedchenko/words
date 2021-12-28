@@ -2,22 +2,34 @@ package com.fedchenko.words.controller;
 
 import com.fedchenko.words.WordsRequest;
 import com.fedchenko.words.WordsResponse;
-import com.fedchenko.words.WordsRestfulService;
+import com.fedchenko.words.WordsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 public class Controller {
 
     @Autowired
-    WordsRestfulService wordsRestfulService;
+    WordsService wordsRestfulService;
 
     @PostMapping("/words")
     public WordsResponse processWords(@RequestBody WordsRequest request) {
-        WordsResponse wordsResponse = new WordsResponse();
-        wordsResponse.setWords((ArrayList<String>) request.getWords());
-        wordsRestfulService.processWords();
+        List<String> list = WordsService.processWords(request.getWords());
+        return new WordsResponse(list);
     }
+
+    /**
+     Request sample:
+
+     {
+     "words": [
+     "horse",
+     "eat",
+     "friday"
+     ]
+     }
+
+     */
 }
