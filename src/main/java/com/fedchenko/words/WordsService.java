@@ -13,7 +13,7 @@ public class WordsService {
         try {
             for (int i = 1; i < input.size(); i++) {
                 if (input.get(i - 1).endsWith("" + input.get(i).charAt(0))) {
-                    toIndex = subList(i);
+                    toIndex++;
                 } else {
                     break;
                 }
@@ -23,11 +23,5 @@ public class WordsService {
         }
         return input.subList(0, toIndex);
 
-    }
-    //Done toIndex is exclusice in the subList() method
-    private static int subList(int i) {
-        int toIndex;
-        toIndex = i + 1;
-        return toIndex;
     }
 }
